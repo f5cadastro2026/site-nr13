@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ficha de Inscrição – Curso NR</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f5f5f5;
+padding:20px;
+}
+
+form{
+max-width:750px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+fieldset{
+border:1px solid #ccc;
+padding:20px;
+margin-top:20px;
+border-radius:8px;
+}
+
+legend{
+font-weight:bold;
+}
+
+label{
+display:block;
+margin-top:10px;
+}
+
+input, textarea, select{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:5px;
+box-sizing:border-box;
+}
+
+textarea{
+resize:vertical;
+}
+
+.termos{
+display:flex;
+align-items:center;
+gap:8px;
+margin-top:10px;
+}
+
+.termos input{
+width:auto;
+}
+
+button{
+margin-top:25px;
+padding:15px;
+width:100%;
+font-size:16px;
+background:#ff6600;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e65c00;
+}
+
+</style>
+</head>
+
+<body>
+
+<form id="formulario" action="https://formspree.io/f/mlgprvkb" method="POST">
+
+<h2>FICHA DE INSCRIÇÃO DO TREINAMENTO</h2>
+
+<fieldset>
+
+<legend>1. Dados do Curso</legend>
+
+<label>Nome do Curso:</label>
+
+<select id="curso" name="curso" required>
+
+<option value="">Selecione o curso</option>
+
+<option value="NR-01 e NR-13">NR-01 e NR-13</option>
+
+</select>
+
+<label>Local / Plataforma:</label>
+
+<input type="text" name="plataforma" value="TEAMS" readonly required>
+
+</fieldset>
+
+
+<fieldset>
+
+<legend>2. Dados do Participante</legend>
+
+<label>Nome Completo:</label>
+
+<input type="text" id="nome" name="nome" required>
+
+<label>Data de Nascimento:</label>
+
+<input type="date" id="nascimento" name="nascimento" required>
+
+<label>Telefone / WhatsApp:</label>
+
+<input type="tel" id="telefone" name="telefone" required>
+
+<label>E-mail:</label>
+
+<input type="email" id="email" name="email" required>
+
+<label>Endereço Completo:</label>
+
+<textarea id="endereco" name="endereco" rows="2" required></textarea>
+
+</fieldset>
+
+
+<fieldset>
+
+<legend>3. Dados Profissionais (Opcional)</legend>
+
+<label>Empresa:</label>
+
+<input type="text" name="empresa">
+
+<label>CNPJ:</label>
+
+<input type="text" name="cnpj">
+
+<label>Cargo / Função:</label>
+
+<input type="text" name="cargo">
+
+<label>Tempo de Experiência na Função:</label>
+
+<input type="text" name="experiencia">
+
+<label>Área de Atuação:</label>
+
+<input type="text" name="area">
+
+</fieldset>
+
+
+<fieldset>
+
+<legend>4. Formação / Qualificação</legend>
+
+<label>Escolaridade:</label>
+
+<input type="text" name="escolaridade" required>
+
+<label>Cursos ou Certificações Relacionadas (se houver):</label>
+
+<textarea name="cursos" rows="3"></textarea>
+
+</fieldset>
+
+
+
+<fieldset>
+
+<legend>5. Declaração</legend>
+
+<p>
+
+Declaro que as informações acima são verdadeiras e estou ciente das condições do curso,
+incluindo critérios de participação, frequência mínima e emissão de certificado.
+
+</p>
+
+<div class="termos">
+
+<input type="checkbox" id="aceite" name="aceito_termos" required>
+
+<label for="aceite">Aceito os termos e condições</label>
+
+</div>
+
+</fieldset>
+
+
+<button type="submit">
+
+Enviar Inscrição
+
+</button>
+
+</form>
+
+
+<script>
+
+document.getElementById("formulario").addEventListener("submit", function(e){
+
+let telefone = document.getElementById("telefone").value.trim();
+
+let email = document.getElementById("email").value.trim();
+
+let telefoneRegex = /^[0-9\(\)\-\s]{10,}$/;
+
+let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(!telefoneRegex.test(telefone)){
+
+alert("Digite um telefone válido.");
+
+e.preventDefault();
+
+return;
+
+}
+
+if(!emailRegex.test(email)){
+
+alert("Digite um e-mail válido.");
+
+e.preventDefault();
+
+return;
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
