@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curso</title>
+<title>Curso NR-13 e NR-01</title>
 <style>
+/* Reset básico */
 body, html {
     margin: 0;
     padding: 0;
@@ -17,24 +18,48 @@ body, html {
     position: relative;
     width: 100%;
     height: 100vh; /* ocupa toda a altura da tela */
-    overflow: hidden; /* evita scroll horizontal */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
 
 /* Imagem de fundo responsiva */
 .landing img {
+    position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* ajusta e corta proporcionalmente a imagem */
-    display: block;
+    object-fit: cover; /* ajusta sem deformar */
+    top: 0;
+    left: 0;
+    z-index: -1; /* envia a imagem para trás */
 }
 
-/* Botão centralizado */
+/* Conteúdo sobre a imagem */
+.landing-content {
+    z-index: 1;
+    padding: 20px;
+    background: rgba(0,0,0,0.4); /* leve sombra atrás do texto para melhor contraste */
+    border-radius: 10px;
+}
+
+/* Título do curso */
+.landing-content h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+/* Descrição do curso */
+.landing-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* Botão de inscrição */
 .btn-cadastrar {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 15px 30px;
+    padding: 15px 35px;
     font-size: 18px;
     background-color: #ff6600;
     color: white;
@@ -48,11 +73,26 @@ body, html {
     background-color: #e65c00;
 }
 
-/* Responsividade para celulares */
-@media screen and (max-width: 600px) {
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .landing-content h1 {
+        font-size: 26px;
+    }
+    .landing-content p {
+        font-size: 16px;
+    }
     .btn-cadastrar {
         font-size: 16px;
         padding: 12px 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .landing-content h1 {
+        font-size: 22px;
+    }
+    .landing-content p {
+        font-size: 14px;
     }
 }
 </style>
@@ -60,8 +100,12 @@ body, html {
 <body>
 
 <div class="landing">
-    <img src="f5.png" alt="Curso">
-    <a href="formulario.html"><button class="btn-cadastrar">Fazer Inscrição</button></a>
+    <img src="f5.png" alt="Curso NR-13 e NR-01">
+    <div class="landing-content">
+        <h1>Treinamento NR-13 e NR-01</h1>
+        <p>Curso online ao vivo de 40h. Aprenda sobre normas de segurança e regulamentações essenciais para sua atuação profissional.</p>
+        <a href="formulario.html"><button class="btn-cadastrar">Fazer Inscrição</button></a>
+    </div>
 </div>
 
 </body>
