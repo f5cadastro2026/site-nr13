@@ -9,22 +9,24 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    height: 100%;
 }
 
 .landing {
-    background: url('f5.png') no-repeat center top; /* mudou center top */
-    background-size: contain; /* ajusta a imagem sem cortar */
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
+}
+
+.landing img {
+    width: 100%;         /* a imagem vai ocupar toda a largura */
+    height: auto;        /* altura ajusta proporcionalmente */
+    display: block;
 }
 
 .btn-cadastrar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centraliza o botão */
     padding: 15px 30px;
     font-size: 18px;
     background-color: #ff6600;
@@ -39,12 +41,8 @@ body, html {
     background-color: #e65c00;
 }
 
-/* Responsividade para telas pequenas */
+/* Responsividade para celulares */
 @media screen and (max-width: 600px) {
-    .landing {
-        background-size: cover; /* para ocupar bem a tela pequena */
-        padding: 10px;
-    }
     .btn-cadastrar {
         font-size: 16px;
         padding: 12px 25px;
@@ -53,8 +51,11 @@ body, html {
 </style>
 </head>
 <body>
+
 <div class="landing">
+    <img src="f5.png" alt="Curso">
     <a href="formulario.html"><button class="btn-cadastrar">Fazer Inscrição</button></a>
 </div>
+
 </body>
 </html>
