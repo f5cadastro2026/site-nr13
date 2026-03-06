@@ -13,29 +13,28 @@ body, html {
 
 /* Container da landing */
 .landing {
-    position: relative;
     width: 100%;
     text-align: center;
     color: white;
+    position: relative;
 }
 
 /* Imagem responsiva mostrando inteira */
 .landing img {
     width: 100%;
-    height: auto;       /* altura ajusta proporcionalmente */
+    height: auto; /* altura proporcional */
     display: block;
 }
 
-/* Caixa do conteúdo central */
+/* Conteúdo abaixo da imagem */
 .landing-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.4); /* sombra atrás do texto */
     padding: 20px;
-    border-radius: 10px;
+    margin-top: -80px; /* sobe um pouco sobre a imagem */
     max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
 }
 
 /* Título e descrição */
@@ -63,7 +62,7 @@ body, html {
     background-color: #e65c00;
 }
 
-/* Ajustes para celular */
+/* Responsividade para celular */
 @media screen and (max-width: 480px) {
     .landing-content h1 {
         font-size: 22px;
