@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso</title>
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
 
-        .landing {
-            background: url('f5.png') no-repeat center center/cover;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+.landing {
+    background: url('f5.png') no-repeat center top; /* mudou center top */
+    background-size: contain; /* ajusta a imagem sem cortar */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-        .btn-cadastrar {
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #ff6600;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+.btn-cadastrar {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
 
-        .btn-cadastrar:hover {
-            background-color: #e65c00;
-        }
+.btn-cadastrar:hover {
+    background-color: #e65c00;
+}
 
-        /* Responsividade para telas pequenas */
-        @media screen and (max-width: 600px) {
-            .landing {
-                padding: 10px;
-            }
-            .btn-cadastrar {
-                font-size: 16px;
-                padding: 12px 25px;
-            }
-        }
-    </style>
+/* Responsividade para telas pequenas */
+@media screen and (max-width: 600px) {
+    .landing {
+        background-size: cover; /* para ocupar bem a tela pequena */
+        padding: 10px;
+    }
+    .btn-cadastrar {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
+</style>
 </head>
 <body>
-    <div class="landing">
-        <a href="formulario.html"><button class="btn-cadastrar">Fazer Inscrição</button></a>
-    </div>
+<div class="landing">
+    <a href="formulario.html"><button class="btn-cadastrar">Fazer Inscrição</button></a>
+</div>
 </body>
 </html>
