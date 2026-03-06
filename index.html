@@ -5,52 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curso NR-13 e NR-01</title>
 <style>
+/* Reset básico */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* Container da landing */
+/* Container da landing com imagem de fundo */
 .landing {
-    width: 100%;
+    background: url('f5.png') no-repeat center center;
+    background-size: cover; /* cobre a tela inteira proporcionalmente */
+    min-height: 100vh; /* altura mínima = altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
-    position: relative;
-}
-
-/* Imagem responsiva mostrando inteira */
-.landing img {
-    width: 100%;
-    height: auto; /* altura proporcional */
-    display: block;
-}
-
-/* Conteúdo abaixo da imagem */
-.landing-content {
-    background: rgba(0,0,0,0.4); /* sombra atrás do texto */
     padding: 20px;
-    margin-top: -80px; /* sobe um pouco sobre a imagem */
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+/* Caixa do conteúdo */
+.landing-content {
+    background: rgba(0,0,0,0.4); /* leve sombra atrás do texto */
+    padding: 20px;
     border-radius: 10px;
+    max-width: 90%;
+    margin-top: 20px; /* espaço abaixo do topo */
 }
 
 /* Título e descrição */
 .landing-content h1 {
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 15px;
 }
+
 .landing-content p {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
 /* Botão */
 .btn-cadastrar {
-    padding: 12px 25px;
-    font-size: 16px;
+    padding: 15px 35px;
+    font-size: 18px;
     background-color: #ff6600;
     color: white;
     border: none;
@@ -58,11 +59,25 @@ body, html {
     cursor: pointer;
     transition: background 0.3s;
 }
+
 .btn-cadastrar:hover {
     background-color: #e65c00;
 }
 
-/* Responsividade para celular */
+/* Responsividade para tablets e celulares */
+@media screen and (max-width: 768px) {
+    .landing-content h1 {
+        font-size: 26px;
+    }
+    .landing-content p {
+        font-size: 16px;
+    }
+    .btn-cadastrar {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .landing-content h1 {
         font-size: 22px;
@@ -80,7 +95,6 @@ body, html {
 <body>
 
 <div class="landing">
-    <img src="f5.png" alt="Curso NR-13 e NR-01">
     <div class="landing-content">
         <h1>Treinamento NR-13 e NR-01</h1>
         <p>Curso online ao vivo de 40h. Aprenda sobre normas de segurança e regulamentações essenciais para sua atuação profissional.</p>
@@ -90,3 +104,7 @@ body, html {
 
 </body>
 </html>
+
+</body>
+</html>
+
