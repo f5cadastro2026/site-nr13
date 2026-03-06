@@ -5,62 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curso NR-13 e NR-01</title>
 <style>
-/* Reset básico */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    height: 100%;
 }
 
 /* Container da landing */
 .landing {
     position: relative;
     width: 100%;
-    height: 100vh; /* ocupa toda a altura da tela */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     color: white;
 }
 
-/* Imagem de fundo responsiva */
+/* Imagem responsiva mostrando inteira */
 .landing img {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* ajusta sem deformar */
-    top: 0;
-    left: 0;
-    z-index: -1; /* envia a imagem para trás */
+    height: auto;       /* altura ajusta proporcionalmente */
+    display: block;
 }
 
-/* Conteúdo sobre a imagem */
+/* Caixa do conteúdo central */
 .landing-content {
-    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.4);
     padding: 20px;
-    background: rgba(0,0,0,0.4); /* leve sombra atrás do texto para melhor contraste */
     border-radius: 10px;
+    max-width: 90%;
 }
 
-/* Título do curso */
+/* Título e descrição */
 .landing-content h1 {
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 15px;
 }
-
-/* Descrição do curso */
 .landing-content p {
-    font-size: 18px;
-    margin-bottom: 25px;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
-/* Botão de inscrição */
+/* Botão */
 .btn-cadastrar {
-    padding: 15px 35px;
-    font-size: 18px;
+    padding: 12px 25px;
+    font-size: 16px;
     background-color: #ff6600;
     color: white;
     border: none;
@@ -68,31 +59,21 @@ body, html {
     cursor: pointer;
     transition: background 0.3s;
 }
-
 .btn-cadastrar:hover {
     background-color: #e65c00;
 }
 
-/* Responsividade */
-@media screen and (max-width: 768px) {
-    .landing-content h1 {
-        font-size: 26px;
-    }
-    .landing-content p {
-        font-size: 16px;
-    }
-    .btn-cadastrar {
-        font-size: 16px;
-        padding: 12px 25px;
-    }
-}
-
+/* Ajustes para celular */
 @media screen and (max-width: 480px) {
     .landing-content h1 {
         font-size: 22px;
     }
     .landing-content p {
         font-size: 14px;
+    }
+    .btn-cadastrar {
+        font-size: 14px;
+        padding: 10px 20px;
     }
 }
 </style>
