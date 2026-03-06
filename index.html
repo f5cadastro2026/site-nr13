@@ -3,54 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curso NR-13 e NR-01</title>
+<title>Curso</title>
 <style>
-/* Reset básico */
 body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
     font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
 }
 
-/* Container da landing com imagem de fundo */
+/* Container da landing */
 .landing {
-    background: url('f5.png') no-repeat center center;
-    background-size: cover; /* cobre a tela inteira proporcionalmente */
-    min-height: 100vh; /* altura mínima = altura da tela */
+    background: url('f5.png') no-repeat center center/cover; /* Desktop */
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
     padding: 20px;
     box-sizing: border-box;
-    flex-direction: column;
 }
 
-/* Caixa do conteúdo */
-.landing-content {
-    background: rgba(0,0,0,0.4); /* leve sombra atrás do texto */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 90%;
-    margin-top: 20px; /* espaço abaixo do topo */
-}
-
-/* Título e descrição */
-.landing-content h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.landing-content p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-/* Botão */
 .btn-cadastrar {
-    padding: 15px 35px;
+    padding: 15px 30px;
     font-size: 18px;
     background-color: #ff6600;
     color: white;
@@ -64,30 +39,15 @@ body, html {
     background-color: #e65c00;
 }
 
-/* Responsividade para tablets e celulares */
-@media screen and (max-width: 768px) {
-    .landing-content h1 {
-        font-size: 26px;
-    }
-    .landing-content p {
-        font-size: 16px;
+/* Troca de imagem para celular */
+@media screen and (max-width: 600px) {
+    .landing {
+        background: url('2.jpg') no-repeat center center/cover; /* Celular */
+        padding: 10px;
     }
     .btn-cadastrar {
         font-size: 16px;
         padding: 12px 25px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .landing-content h1 {
-        font-size: 22px;
-    }
-    .landing-content p {
-        font-size: 14px;
-    }
-    .btn-cadastrar {
-        font-size: 14px;
-        padding: 10px 20px;
     }
 }
 </style>
@@ -95,15 +55,8 @@ body, html {
 <body>
 
 <div class="landing">
-    <div class="landing-content">
-        <h1>Treinamento NR-13 e NR-01</h1>
-        <p>Curso online ao vivo de 40h. Aprenda sobre normas de segurança e regulamentações essenciais para sua atuação profissional.</p>
-        <a href="formulario.html"><button class="btn-cadastrar">Fazer Inscrição</button></a>
-    </div>
+    <a href="formulario.html"><button class="btn-cadastrar">Fazer Inscrição</button></a>
 </div>
-
-</body>
-</html>
 
 </body>
 </html>
