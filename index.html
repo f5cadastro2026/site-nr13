@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F5 Assessoria Industrial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+    body { background:#fbfbfc; color:#04aa94; }
+
+    header {
+      background:#000;
+      padding:10px 25px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      border-bottom:1px solid #111;
+    }
+
+    header img { height:38px; }
+    header h1 { color:#fff; font-size:15px; font-weight:600; }
+
+    nav a {
+      color:#aaa;
+      margin-left:15px;
+      text-decoration:none;
+      font-size:13px;
+      transition:0.3s;
+    }
+
+    nav a:hover { color:gold; }
+
+    .hero {
+      height:100vh;
+      background:linear-gradient(rgba(241, 240, 240, 0.6), rgba(0,0,0,0.9)), url('fundo.jpg') center/cover;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-logo {
+      width:220px;
+      margin-bottom:20px;
+    }
+
+    .hero h2 { font-size:34px; font-weight:600; }
+    .hero span { color:gold; }
+    .hero p { margin-top:10px; font-size:14px; color:#bbb; }
+
+    .btn {
+      margin-top:15px;
+      padding:10px 22px;
+      border:none;
+      background:transparent;
+      color:gold;
+      border:1px solid gold;
+      border-radius:30px;
+      cursor:pointer;
+      transition:0.3s;
+      font-size:13px;
+    }
+
+    .btn:hover { background:gold; color:#000; }
+
+    section { padding:90px 25px; }
+
+    .section-title {
+      text-align:center;
+      margin-bottom:40px;
+      font-size:22px;
+      font-weight:600;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:20px;
+    }
+
+    /* 🔥 NOVO ESTILO SOMENTE PARA SERVIÇOS */
+    #servicos .grid {
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    #servicos .card {
+      padding:0;
+      height:320px;
+      position:relative;
+      overflow:hidden;
+      border-radius:12px;
+      border:1px solid #080808;
+    }
+
+    #servicos .card img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    #servicos .card .conteudo {
+      position:absolute;
+      bottom:0;
+      width:100%;
+      background:linear-gradient(transparent, rgba(0,0,0,0.9));
+      padding:15px;
+      color:#fff;
+    }
+
+    #servicos .card h3 {
+      color:gold;
+      margin-bottom:5px;
+    }
+
+    #servicos .card p {
+      font-size:13px;
+      color:#ddd;
+    }
+
+    .card {
+      background:#272525;
+      padding:25px;
+      border-radius:10px;
+      border:1px solid #080808;
+      transition:0.3s;
+    }
+
+    .card:hover {
+      border-color:gold;
+      transform:translateY(-5px);
+    }
+
+    .card h3 { color:gold; margin-bottom:10px; }
+
+    .vantagens {
+      display:grid;
+      gap:15px;
+      text-align:center;
+    }
+
+    .vantagem {
+      background:#fcfafa;
+      padding:20px;
+      border-radius:8px;
+      border:1px solid #2906a5;
+    }
+
+    .vantagem strong { color:rgb(5, 5, 5); }
+
+    .social img {
+      width:35px;
+      height:35px;
+      object-fit:cover;
+      margin:5px;
+      transition:0.3s;
+      opacity:0.8;
+    }
+
+    .social img:hover {
+      transform:scale(1.15);
+      opacity:1;
+    }
+
+    footer {
+      text-align:center;
+      padding:25px;
+      font-size:12px;
+      color:#380b8b;
+    }
+
+    .whatsapp {
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      width:65px;
+      height:65px;
+      border-radius:50%;
+      overflow:hidden;
+      animation:pulse 1.5s infinite;
+    }
+
+    .whatsapp img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    @keyframes pulse {
+      0% { transform:scale(1); }
+      50% { transform:scale(1.08); }
+      100% { transform:scale(1); }
+    }
+
+    .depoimentos {
+      overflow: hidden;
+      background: #e9e9f5;
+      padding: 40px 0;
+    }
+
+    .depoimentos-container {
+      display: flex;
+      width: max-content;
+      animation: scrollDepoimentos 25s linear infinite;
+    }
+    @keyframes scrollDepoimentos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+    .depoimento {
+      min-width: 280px;
+      margin: 0 15px;
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #1a1a1a;
+    }
+
+    .depoimento img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .estrelas {
+      color: gold;
+      margin: 5px 0;
+    }
+
+    @media(min-width:768px){
+      .grid { grid-template-columns:repeat(2,1fr); }
+      .vantagens { grid-template-columns:repeat(3,1fr); }
+      .hero-logo { width:320px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <img src="F5ASSESSORIA2.png">
+    <h1>F5 Assessoria</h1>
+  </div>
+
+  <nav>
+    <a href="#">Início</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#treinamentos">Cursos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <img src="F5ASSESSORIA.png" class="hero-logo">
+    <h2><span>Treinamentos e Serviços Industrial</span></h2>
+    <p>Qualificação profissional com foco em segurança e excelência operacional</p>
+    <button class="btn">Saber Mais</button>
+  </div>
+</section>
+
+<section id="servicos">
+  <h2 class="section-title">Serviços</h2>
+  <div class="grid">
+
+    <div class="card">
+      <img src="servico1.jpg">
+      <div class="conteudo">
+        <h3>Inspeção NR-13</h3>
+        <p>Inspeção em caldeiras, vasos de pressão e tubulações</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="servico2.jpg">
+      <div class="conteudo">
+        <h3>Ensaio de ME</h3>
+        <p>Ensaio Mediçao de Espessuar </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="servico3.jpg">
+      <div class="conteudo">
+        <h3>Ensaio de LP</h3>
+        <p>Ensaio de Liquido Penetrante </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="servico4.jpg">
+      <div class="conteudo">
+        <h3>Locação de Equipamentos</h3>
+        <p>Equipamentos para Ensaios de END's</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESTO DO CÓDIGO PERMANECE IGUAL -->
+
+</body>
+</html>
+
+<section id="treinamentos">
+  <h2 class="section-title">Treinamentos</h2>
+  <div class="grid">
+    <div class="card"><h3>Treinamento de NR-13</h3></div>
+    <div class="card"><h3>Treinamento para teórica e prática de LP</h3></div>
+    <div class="card"><h3>Treinamento para teórica e prática ME</h3></div>
+    <div class="card"><h3>Treinamento para teórica e prática PM</h3></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Diferenciais em Treinamentos</h2>
+  <div class="vantagens">
+    <div class="vantagem"><strong>Metodologia prática</strong><p>Treinamento direto na realidade do trabalho</p></div>
+    <div class="vantagem"><strong>Instrutores experientes</strong><p>Profissionais atuantes na área industrial</p></div>
+    <div class="vantagem"><strong>Certificação válida</strong><p>Reconhecida conforme normas regulamentadoras</p></div>
+  </div>
+</section>
+
+<!-- 🔥 DEPOIMENTOS -->
+<section class="depoimentos">
+  <h2 class="section-title">Depoimentos</h2>
+
+  <div class="depoimentos-container">
+
+    <div class="depoimento">
+      <img src="pessoa1.jpg">
+      <h4>João Silva</h4>
+      <div class="estrelas">★★★★★</div>
+      <p>Excelente treinamento, muito prático e direto ao ponto.</p>
+    </div>
+
+    <div class="depoimento">
+      <img src="pessoa2.jpg">
+      <h4>Carlos Santos</h4>
+      <div class="estrelas">★★★★★</div>
+      <p>Aprendi muito, recomendo demais.</p>
+    </div>
+
+    <div class="depoimento">
+      <img src="pessoa3.jpg">
+      <h4>Marcos Lima</h4>
+      <div class="estrelas">★★★★★</div>
+      <p>Instrutores experientes e conteúdo de qualidade.</p>
+    </div>
+
+    <!-- duplicado para efeito infinito -->
+    <div class="depoimento">
+      <img src="pessoa8.jpg">
+      <h4>Pedro Miguel</h4>
+      <div class="estrelas">★★★★★</div>
+      <p>Excelente treinamento, muito prático e direto ao ponto.</p>
+    </div>
+        <div class="depoimento">
+      <img src="pessoa7.jpg">
+      <h4>Carla Silva</h4>
+      <div class="estrelas">★★★★★</div>
+      <p>Excelente treinamento, muito prático e direto ao ponto.</p>
+    </div>
+        <div class="depoimento">
+      <img src="pessoa4.jpg">
+      <h4>Fernando Cruz</h4>
+      <div class="estrelas">★★★★</div>
+      <p>boa didatica.</p>
+    </div>
+        <div class="depoimento">
+      <img src="pessoa5.jpg">
+      <h4>João Silva</h4>
+      <div class="estrelas">★★★★★</div>
+      <p>Excelente treinamento.</p>
+    </div>
+
+    <div class="depoimento">
+      <img src="pessoa6.jpg">
+      <h4>Carlos Santos</h4>
+      <div class="estrelas">★★★★★</div>
+      <p>recomendo, bom conteudo.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contato">
+  <h2 class="section-title">Contato</h2>
+  <p style="text-align:center">📧 f5assessorianr13@gmail.com</p>
+  <p style="text-align:center">📱 +55 71 99108-3581</p>
+
+  <div class="social" style="text-align:center; margin-top:15px;">
+    <a href="#"><img src="linkedin.png"></a>
+    <a href="#"><img src="youtube.png"></a>
+    <a href="#"><img src="instagram.png"></a>
+  </div>
+</section>
+
+<footer>
+  © 2026 F5 Assessoria Industrial
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5571991083581" target="_blank">
+  <img src="10000484.png">
+</a>
+
+</body>
+</html>
